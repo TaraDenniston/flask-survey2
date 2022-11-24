@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block title %}{{title}}{% endblock %}
+
+{% block content %}
+<h1 class="display-4 text-center mb-5">Would you like to take a survey?</h1>
+<p class="text-center mb-4" style="font-size: 24px">Please select a survey</h4>
+<div class="row">
+    <div class="col"></div>
+    <div class="col">
+        <form action="/survey" class="text-center" style="width: 600px;">
+            <select name="survey" class="form-select form-select-lg mb-3">
+                {% for survey in surveys %}
+                <option value="{{survey}}">{{survey}}</option>
+                {% endfor %}
+            </select>
+            <button type="submit" class="btn btn-primary btn-lg">Submit</button>
+        </form>
+    </div>
+    <div class="col"></div>
+</div>
+{% endblock %}
